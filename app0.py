@@ -300,7 +300,7 @@ if st.session_state.messages[-1]["role"] != "assistant":
                 st.session_state.inferred_answers.append(data["question_number"])
 
         if phq9_complete() and not st.session_state.get("agent_ran"):
-            agent_results = run_hopebot_agent(
+            agent_results = run_pipeline(
             phq9_score=st.session_state.total_phq9_score,
             conversation=st.session_state.messages)
         
